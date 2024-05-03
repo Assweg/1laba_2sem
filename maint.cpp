@@ -10,7 +10,12 @@ float calculateTrapezoidPerimeter(float side1, float side2, float base1, float b
 
 // Функция для вычисления площади трапеции
 float calculateTrapezoidArea(float base1, float base2, float height) {
-    return (base1 + base2) * height / 2;
+    if (height <= base1 && height <= base2) {
+        return (base1 + base2) * height / 2;
+    } else {
+        cout << "Высота должна быть меньше или равна каждой из боковых сторон трапеции!" << endl;
+        return 0;
+    }
 }
 
 // Функция для вычисления длины средней линии трапеции
@@ -19,7 +24,7 @@ float calculateTrapezoidMedian(float base1, float base2) {
 }
 
 int main() {
-    setlocale(LC_ALL, "Russian");    
+    setlocale(LC_ALL, "Russian");
     float side1, side2, base1, base2, height;
     cout << "Введите длину первого бокового ребра трапеции: ";
     cin >> side1;
