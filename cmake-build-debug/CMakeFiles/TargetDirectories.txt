@@ -1,0 +1,3 @@
+/Users/assweg/CLionProjects/sdam/cmake-build-debug/CMakeFiles/sdam.dir
+/Users/assweg/CLionProjects/sdam/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/assweg/CLionProjects/sdam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
