@@ -1,104 +1,34 @@
-# Лабараторная работа №1
-## «Работа с Git и GitHub»
-## по дисциплине: «Программирование»
-### Цели и задачи работы: изучение платформы GitHub и практическое использование Git для хранения, обновления и распространения исходного кода проекта.
-### Задание к работе: Разработать алгоритм решения задачи по индивидуальному заданию. 
-### Геометрические фигуры. Реализовать функции вычисления параметров для двух-трех следующих геометрических фигур (по одной фигуре на студента):
-### Прямоугольник – периметр, площадь, длина диагонали;
-### Треугольник – периметр, площадь по формуле Герона, проверка на равнобедренность;
-### Трапеция – периметр, площадь, длина средней линии;
-### Окружность – длина окружности, площадь круга, площадь кругового сектора.
+# Геометрия на C++ · работа с Git и GitHub
 
-### Задание на прямоугольник выполнил Бутаков Никита Максимович, часть кода представлена ниже:
-```C++
-#include <iostream>
-#include <cmath>
+![Стек](https://img.shields.io/badge/C%2B%2B-334155?style=flat-square) ![Семестр](https://img.shields.io/badge/семестр-2-0f766e?style=flat-square) ![Статус](https://img.shields.io/badge/статус-%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-64748b?style=flat-square)
 
-using namespace std;
+Первая лабораторная по программированию: вычисление параметров геометрических фигур и совместная работа с исходным кодом через Git.
 
-// Функция для вычисления периметра прямоугольника
-float calculateRectanglePerimeter(float length, float width) {
-    return 2 * (length + width);
-}
+## Задания
 
-// Функция для вычисления площади прямоугольника
-float calculateRectangleArea(float length, float width) {
-    return length * width;
-}
+| Файл | Задача |
+|---|---|
+| [mainr.cpp](mainr.cpp) | Периметр, площадь и диагональ прямоугольника — моя часть лабораторной |
+| [maint.cpp](maint.cpp) | Дополнительная программа для трапеции |
 
-// Функция для вычисления длины диагонали прямоугольника
-float calculateRectangleDiagonal(float length, float width) {
-    return sqrt(pow(length, 2) + pow(width, 2));
-}
+Каждая программа запускается отдельно и получает размеры фигуры из консоли.
 
-int main() {
-    setlocale(LC_ALL, "Russian");
-    float length, width;
-    cout << "Введите длину прямоугольника: ";
-    cin >> length;
-    cout << "Введите ширину прямоугольника: ";
-    cin >> width;
+## Сборка и запуск
 
-    // Проверка на отрицательные числа
-    if (length < 0 || width < 0) {
-        cout << "Введите положительные числа!" << endl;
-        return 1;
-    }
+Нужен компилятор C++ (GCC или Clang).
 
-    cout << "Периметр прямоугольника: " << calculateRectanglePerimeter(length, width) << endl;
-    cout << "Площадь прямоугольника: " << calculateRectangleArea(length, width) << endl;
-    cout << "Длина диагонали прямоугольника: " << calculateRectangleDiagonal(length, width) << endl;
+```bash
+c++ -std=c++17 mainr.cpp -o rectangle
+./rectangle
 
-    return 0;
-}
+c++ -std=c++17 maint.cpp -o trapezoid
+./trapezoid
 ```
 
-### Задание на Трапецию выполнил Когумбаев Данил Валерьевич, часть кода представлена ниже:
-```C++
-#include <iostream>
-#include <cmath>
+## Материалы
 
-using namespace std;
+Отчёт хранится в [разделе второго семестра](https://github.com/Assweg/nstu/tree/main/2sem).
 
-// Функция для вычисления периметра трапеции
-float calculateTrapezoidPerimeter(float side1, float side2, float base1, float base2) {
-    return side1 + side2 + base1 + base2;
-}
+---
 
-// Функция для вычисления площади трапеции
-float calculateTrapezoidArea(float base1, float base2, float height) {
-    return (base1 + base2) * height / 2;
-}
-
-// Функция для вычисления длины средней линии трапеции
-float calculateTrapezoidMedian(float base1, float base2) {
-    return (base1 + base2) / 2;
-}
-
-int main() {
-    setlocale(LC_ALL, "Russian");    
-    float side1, side2, base1, base2, height;
-    cout << "Введите длину первого бокового ребра трапеции: ";
-    cin >> side1;
-    cout << "Введите длину второго бокового ребра трапеции: ";
-    cin >> side2;
-    cout << "Введите длину верхнего основания трапеции: ";
-    cin >> base1;
-    cout << "Введите длину нижнего основания трапеции: ";
-    cin >> base2;
-    cout << "Введите высоту трапеции: ";
-    cin >> height;
-
-    // Проверка на отрицательные числа
-    if (side1 < 0 || side2 < 0 || base1 < 0 || base2 < 0 || height < 0) {
-        cout << "Введите положительные числа!" << endl;
-        return 1;
-    }
-
-    cout << "Периметр трапеции: " << calculateTrapezoidPerimeter(side1, side2, base1, base2) << endl;
-    cout << "Площадь трапеции: " << calculateTrapezoidArea(base1, base2, height) << endl;
-    cout << "Длина средней линии трапеции: " << calculateTrapezoidMedian(base1, base2) << endl;
-
-    return 0;
-}
-```
+[Все учебные работы](https://github.com/Assweg/nstu) · [Профиль Assweg](https://github.com/Assweg)
